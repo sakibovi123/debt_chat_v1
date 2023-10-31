@@ -50,45 +50,47 @@ function Home() {
         setInterval(()=>{
             setQualify("Do you want to know if you qualify for over $10,000 in debt relief? Tap Yes! 😃")
         }, 2000)
-        setInterval(()=>{
+        setTimeout(()=>{
             setButtonVisiblity(true)
-        }, 3000)
-
-        setTimeout(()=> {
-            setLoading(false)
-        }, 500)
+        }, 5000)   
     }
 
 
     const reply = (value)=> {
+        setButtonVisiblity(false)
         if( value === "Yes" ) {
             setButtonVisiblity(false)
             setInterval(()=>{
                 setResponse1("Yes")
             }, 1200)
-            
 
             setInterval(()=> {
                 setStep2(true)
             }, 2000)
 
             setInterval(()=>{
-                setMsg1("Alright, let me ask you two quick questions.")
-                setInterval(()=>{
-                    setMsg2("Do you have more than $15,000 in debt? Press Yes or No.")
-
-                    setInterval(()=>{
-                        setBtn2(true)
-                    }, 3000)
-                }, 2500)
+                setMsg1("Alright, let me ask you two quick questions.") 
+            }, 1200)
+            
+            setInterval(()=>{
+                setMsg2("Do you have more than $15,000 in debt? Press Yes or No.")
                 
-            })
+            }, 2500)
+
+            // setBtn2(true)
+            setTimeout(()=>{
+                setBtn2(true)
+            }, 5000)
+            
         }
     }
 
 
     const reply2 = (value)=> {
+        setBtn2(false)
+        console.log(btn2)
         if( value === "Yes" ) {
+            
             setResponse2("Yes")
             setInterval(()=> {
                 setStep3(true)
@@ -98,10 +100,10 @@ function Home() {
             setInterval(()=> {
                 setMsg3("Would you like to Clear Your Debt?")
             }, 2000)
-
-            setInterval(()=> {
+            // setBtn3(true)
+            setTimeout(()=> {
                 setBtn3(true)
-            }, 2500)
+            }, 5000)
         } 
         else{
             // code here
@@ -109,9 +111,10 @@ function Home() {
     }
 
     const reply3 = (value)=> {
+        setBtn3(false)
         if( value === "Yes" ) {
             setStep4(true)
-
+            setBtn3(false)
             setInterval(()=> {
                 setMsg4("🎉 Congratulations! 🎁")
             }, 1200)
