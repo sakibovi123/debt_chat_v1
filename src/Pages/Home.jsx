@@ -98,10 +98,10 @@ const reply = (value)=> {
 
             }, 2500)
 
-            setBtn2(true)
-            // setInterval(()=>{
-            //     setBtn2(true)
-            // }, 3000)
+            // setBtn2(true)
+            setTimeout(()=>{
+                setBtn2(true)
+            }, 3000)
 
         }
     }
@@ -127,6 +127,7 @@ const reply = (value)=> {
     } else {
       // code here
       setResponse2("No");
+      setBtn2(false);
       setInterval(() => {
         setStep3(true);
       }, 1200);
