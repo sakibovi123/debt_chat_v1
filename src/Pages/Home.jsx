@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import agentImage from "../assets/agent.jpeg";
+import userImage from "../assets/user-avatar.png";
 
 function Home() {
   const [loading, setLoading] = useState(false);
@@ -8,6 +10,40 @@ function Home() {
   const [hello, setHello] = useState("");
   const [evelyn, setEvelyn] = useState("");
   const [qualify, setQualify] = useState("");
+
+  const [showLoad, setShowLoad] = useState("");
+
+  // image show or hide
+  const [showImg1, setShowImg1] = useState(false);
+  const [showImg2, setShowImg2] = useState(false);
+  const [showImg3, setShowImg3] = useState(false);
+  const [showImg4, setShowImg4] = useState(false);
+  const [showImg5, setShowImg5] = useState(false);
+  const [showImg6, setShowImg6] = useState(false);
+  const [showImg7, setShowImg7] = useState(false);
+  const [showImg8, setShowImg8] = useState(false);
+  const [showImg9, setShowImg9] = useState(false);
+  const [showImg10, setShowImg10] = useState(false);
+  const [showImg11, setShowImg11] = useState(false);
+  const [showImg12, setShowImg12] = useState(false);
+  const [showImg13, setShowImg13] = useState(false);
+
+  // msg div show or hide
+  const [showMsg1, setShowMsg1] = useState(false);
+  const [showMsg2, setShowMsg2] = useState(false);
+  const [showMsg3, setShowMsg3] = useState(false);
+  const [showMsg4, setShowMsg4] = useState(false);
+  const [showMsg5, setShowMsg5] = useState(false);
+  const [showMsg6, setShowMsg6] = useState(false);
+  const [showMsg7, setShowMsg7] = useState(false);
+  const [showMsg8, setShowMsg8] = useState(false);
+  const [showMsg9, setShowMsg9] = useState(false);
+  const [showMsg10, setShowMsg10] = useState(false);
+
+  // show user reply
+  const [showUserReply1, setshowUserReply1] = useState(false);
+  const [showUserReply2, setshowUserReply2] = useState(false);
+  const [showUserReply3, setshowUserReply3] = useState(false);
 
   // step 2
   const [step2, setStep2] = useState(false);
@@ -38,139 +74,198 @@ function Home() {
   const [yes, setYes] = useState("Yes");
   const [no, setNo] = useState("No");
 
-  const step1 = ()=> {
-        setLoading(true)
-        setInterval(()=> {
-            setHello("Hello")
-        }, 700)
-        setInterval(()=>{
-            setEvelyn("I'm Evelyn from Debt Settlement.")
-        }, 1200)
+  const step1 = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setShowMsg1(true);
+      setHello("Hello");
+      setShowImg1(true);
+    }, 700);
+    setTimeout(() => {
+      setShowMsg2(true);
+      setEvelyn("I'm Evelyn from Debt Settlement.");
+      setShowImg1(false);
+      setShowImg2(true);
+    }, 1600);
 
-        setInterval(()=>{
-            setQualify("Do you want to know if you qualify for over $10,000 in debt relief? Tap Yes! 😃")
-        }, 2000)
-        setTimeout(()=>{
-            setButtonVisiblity(true)
-        }, 5000)
+    setTimeout(() => {
+      setShowMsg3(true);
+      setQualify(
+        "Do you want to know if you qualify for over $10,000 in debt relief? Tap Yes! 😃"
+      );
+      setShowImg1(false);
+      setShowImg2(false);
+      setShowImg3(true);
+    }, 2400);
+    setTimeout(() => {
+      setButtonVisiblity(true);
+      setShowImg1(false);
+      setShowImg2(false);
+      setShowImg3(false);
+      setShowImg4(true);
+    }, 4000);
+  };
+
+  //   const reply = (value) => {
+  //     if (value === "Yes") {
+  //       setButtonVisiblity(false);
+  //       setInterval(() => {
+  //         setResponse1("Yes");
+  //       }, 1200);
+
+  //       setInterval(() => {
+  //         setStep2(true);
+  //       }, 2000);
+
+  //       setInterval(() => {
+  //         setMsg1("Alright, let me ask you two quick questions.");
+  //         setInterval(() => {
+  //           setMsg2("Do you have more than $15,000 in debt? Press Yes or No.");
+
+  //           setInterval(() => {
+  //             setBtn2(true);
+  //           }, 3000);
+  //         }, 2500);
+  //       }, 1800);
+  //     }
+  //   };
+  const reply = (value) => {
+    if (value === "Yes") {
+      setshowUserReply1(true);
+      setButtonVisiblity(false);
+      setResponse1("Yes");
+      setTimeout(() => {
+        setShowMsg4(true);
+        setShowImg5(true);
+      }, 1200);
+
+      setTimeout(() => {
+        setStep2(true);
+      }, 2000);
+
+      setTimeout(() => {
+        setMsg1("Alright, let me ask you two quick questions.");
+      }, 1200);
+
+      setTimeout(() => {
+        setShowImg5(false);
+        setShowMsg5(true);
+        setShowImg6(true);
+        setMsg2("Do you have more than $15,000 in debt? Press Yes or No.");
+      }, 2500);
+
+      // setBtn2(true)
+      setTimeout(() => {
+        setShowImg6(false);
+        setShowImg7(true);
+        setBtn2(true);
+      }, 3000);
     }
-
-//   const reply = (value) => {
-//     if (value === "Yes") {
-//       setButtonVisiblity(false);
-//       setInterval(() => {
-//         setResponse1("Yes");
-//       }, 1200);
-
-//       setInterval(() => {
-//         setStep2(true);
-//       }, 2000);
-
-//       setInterval(() => {
-//         setMsg1("Alright, let me ask you two quick questions.");
-//         setInterval(() => {
-//           setMsg2("Do you have more than $15,000 in debt? Press Yes or No.");
-
-//           setInterval(() => {
-//             setBtn2(true);
-//           }, 3000);
-//         }, 2500);
-//       }, 1800);
-//     }
-//   };
-const reply = (value)=> {
-        if( value === "Yes" ) {
-            setButtonVisiblity(false)
-            setInterval(()=>{
-                setResponse1("Yes")
-            }, 1200)
-
-            setInterval(()=> {
-                setStep2(true)
-            }, 2000)
-
-            setInterval(()=>{
-                setMsg1("Alright, let me ask you two quick questions.") 
-            }, 1200)
-
-            setInterval(()=>{
-                setMsg2("Do you have more than $15,000 in debt? Press Yes or No.")
-
-            }, 2500)
-
-            // setBtn2(true)
-            setTimeout(()=>{
-                setBtn2(true)
-            }, 3000)
-
-        }
-    }
+  };
 
   const reply2 = (value) => {
     if (value === "Yes") {
+      setshowUserReply2(true);
       setResponse2("Yes");
       setBtn2(false);
+
       console.log(btn2);
 
-      setInterval(() => {
+      setTimeout(() => {
         setStep3(true);
       }, 1200);
-      
 
-      setInterval(() => {
+      setTimeout(() => {
+        setShowImg8(true);
+        setShowMsg6(true);
         setMsg3("Would you like to Clear Your Debt?");
       }, 2000);
 
-      setTimeout(()=> {
-                setBtn3(true)
-            }, 5000);
+      setTimeout(() => {
+        setShowImg8(false);
+        setShowImg9(true);
+        setBtn3(true);
+      }, 3000);
     } else {
       // code here
+      setshowUserReply2(true);
       setResponse2("No");
       setBtn2(false);
       setInterval(() => {
         setStep3(true);
       }, 1200);
 
-      setInterval(() => {
+      setTimeout(() => {
+        setShowImg8(true);
+        setShowMsg6(true);
         setMsg3("Are you on medicaid or medicare?");
       }, 2000);
 
-      setTimeout(()=> {
-                setBtn3(true)
-            }, 5000)
+      setTimeout(() => {
+        setShowImg8(false);
+        setShowImg10(true);
+        setBtn3(true);
+      }, 3000);
     }
   };
 
   const reply3 = (value) => {
     setBtn3(false);
     if (value === "Yes") {
+      setshowUserReply3(true);
       setStep4(true);
+      setResponse3("Yes");
 
-      setInterval(() => {
+      setTimeout(() => {
+        setShowImg11(true);
+        setShowMsg7(true);
         setMsg4("🎉 Congratulations! 🎁");
       }, 1200);
-      setInterval(() => {
+      setTimeout(() => {
+        setShowImg11(false);
+        setShowImg12(true);
+        setShowMsg8(true);
         setMsg5(
           "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
         );
+        // setMsg6("+18556900292");
+        // setMsg6_1("(855) 690-0292");
+      }, 1500);
+      setTimeout(() => {
+        setShowImg11(false);
+        setShowImg12(false);
+        setShowImg13(true);
+        setShowMsg9(true);
         setMsg6("+18556900292");
         setMsg6_1("(855) 690-0292");
-      }, 1500);
+      }, 2300);
     } else {
       // code here
       setStep4(true);
+      setResponse3(value);
 
-      setInterval(() => {
+      setTimeout(() => {
+        setShowImg11(true);
+        setShowMsg7(true);
         setMsg4("🎉 Congratulations! 🎁");
       }, 1200);
-      setInterval(() => {
+      setTimeout(() => {
+        setShowImg11(false);
+        setShowImg12(true);
+        setShowMsg8(true);
         setMsg5(
           "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
         );
+      }, 1500);
+
+      setTimeout(() => {
+        setShowImg11(false);
+        setShowImg12(false);
+        setShowImg13(true);
+        setShowMsg9(true);
         setMsg6("+18556900292");
         setMsg6_1("(855) 690-0292");
-      }, 1500);
+      }, 2300);
     }
   };
 
@@ -184,72 +279,379 @@ const reply = (value)=> {
       <Header />
       {/* End header */}
 
-      <div id="step-1" className="">
-        <p>{hello}</p>
-        <p>{evelyn}</p>
-        <p>{qualify}</p>
-        {buttonVisiblity === true && (
-          <button
-            onClick={() => reply("Yes")}
-            className="cursor-pointer bg-blue-600 p-3 rounded w-[100px]"
-          >
-            {" "}
-            Yes
-          </button>
-        )}
-      </div>
+      <div className="max-w-[450px] mx-auto min-h-[85vh] px-4 ">
+        <div id="step-1" className="mt-10">
+          {showMsg1 && (
+            <div className="flex gap-2 items-end mb-3">
+              <div className="w-8">
+                {showImg1 === true ? (
+                  <img className="rounded-full" src={agentImage} alt="" />
+                ) : (
+                  <div> </div>
+                )}
+              </div>
+              <p
+                className={
+                  "bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px]"
+                }
+              >
+                {hello}
+              </p>
+            </div>
+          )}
 
-      {/* reply section 1 */}
-      <div>
-        <p>{response1}</p>
-      </div>
+          {showMsg2 && (
+            <div className="flex gap-2 items-end mb-3">
+              <div className="w-8">
+                {showImg2 === true ? (
+                  <img className="rounded-full" src={agentImage} alt="" />
+                ) : (
+                  <div> </div>
+                )}
+              </div>
+              <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                {evelyn}
+              </p>
+            </div>
+          )}
 
-      {/* step2 */}
+          {showMsg3 && (
+            <div className="flex gap-2 items-end mb-3">
+              <div className="w-8">
+                {showImg3 === true ? (
+                  <img className="rounded-full" src={agentImage} alt="" />
+                ) : (
+                  <div> </div>
+                )}
+              </div>
+              <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                {qualify}
+              </p>
+            </div>
+          )}
 
-      <div id="step2">
-        <p>{msg1}</p>
-        <p>{msg2}</p>
-        {btn2 && (
-          <div>
-            <button onClick={() => reply2("Yes")}>Yes</button>
-            <button onClick={() => reply2("No")}>No</button>
-          </div>
-        )}
-      </div>
-
-      {/* reply section 2 */}
-      <div>
-        <p>{response2}</p>
-      </div>
-
-      {/* step 3 */}
-      {step3 && (
-        <div id="step-3">
-          <p>{msg3}</p>
-          {btn3 && (
-            response2 === "Yes" ? <div>
-              <button onClick={() => reply3("Yes")}>Yes</button>
-              <button onClick={() => reply3("No")}>No</button>
-            </div> : <div>
-                <button onClick={() => reply3("No")}>No</button>
-                <button onClick={() => reply3("Mediciad")}>Medicaid</button>
-                <button onClick={() => reply3("Medicare")}>Medicare</button>
+          {buttonVisiblity === true && (
+            <div className="flex gap-2 items-end mb-3">
+              <div className="w-8">
+                {showImg4 === true ? (
+                  <img className="rounded-full" src={agentImage} alt="" />
+                ) : (
+                  <div> </div>
+                )}
+              </div>
+              <div className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                <button
+                  onClick={() => reply("Yes")}
+                  className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
+                >
+                  {" "}
+                  Yes
+                </button>
+              </div>
             </div>
           )}
         </div>
-      )}
 
-      {/* step 3 ends */}
+        {/* reply section 1 */}
+        {showUserReply1 && (
+          <div className="flex items-end justify-end gap-2 my-6">
+            <p className="bg-blue-600 text-white w-fit p-3 rounded-md max-w-[305px] ">
+              {response1}
+            </p>
+            <div className="w-8">
+              <img src={userImage} alt="" />
+            </div>
+          </div>
+        )}
 
-      {/* step 4 */}
-      {step4 && (
-        <div id="step-4">
-          <p>{msg4}</p>
-          <p>{msg5}</p>
-          <a href={msg6}>{msg6_1}</a>
+        {/* step2 */}
+
+        <div id="step2">
+          {showMsg4 && (
+            <div className="flex gap-2 items-end mb-3">
+              <div className="w-8">
+                {showImg5 === true ? (
+                  <img className="rounded-full" src={agentImage} alt="" />
+                ) : (
+                  <div> </div>
+                )}
+              </div>
+              <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                {msg1}
+              </p>
+            </div>
+          )}
+          {/* <p>{msg1}</p> */}
+
+          {showMsg5 && (
+            <div className="flex gap-2 items-end mb-3">
+              <div className="w-8">
+                {showImg6 === true ? (
+                  <img className="rounded-full" src={agentImage} alt="" />
+                ) : (
+                  <div> </div>
+                )}
+              </div>
+              <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                {msg2}
+              </p>
+            </div>
+          )}
+          {/* <p>{msg2}</p> */}
+          {btn2 && (
+            <div className="flex gap-2 items-end mb-3">
+              <div className="w-8">
+                {showImg7 === true ? (
+                  <img className="rounded-full" src={agentImage} alt="" />
+                ) : (
+                  <div> </div>
+                )}
+              </div>
+              <div className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                <button
+                  className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
+                  onClick={() => reply2("Yes")}
+                >
+                  Yes
+                </button>
+
+                <button
+                  className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
+                  onClick={() => reply2("No")}
+                >
+                  No
+                </button>
+              </div>
+            </div>
+            // <div>
+            //   <button
+            //     className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
+            //     onClick={() => reply2("Yes")}
+            //   >
+            //     Yes
+            //   </button>
+            //   <button
+            //     className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
+            //     onClick={() => reply2("No")}
+            //   >
+            //     No
+            //   </button>
+            // </div>
+          )}
         </div>
-      )}
-      {/* step 4 ends */}
+
+        {/* reply section 2 */}
+        {showUserReply2 && (
+          <div className="flex items-end justify-end gap-2 my-6">
+            <p className="bg-blue-600 text-white w-fit p-3 rounded-md max-w-[305px] ">
+              {response2}
+            </p>
+            <div className="w-8">
+              <img src={userImage} alt="" />
+            </div>
+          </div>
+        )}
+
+        {/* <div>
+          <p>{response2}</p>
+        </div> */}
+
+        {/* step 3 */}
+        {step3 && (
+          <div id="step-3">
+            {showMsg6 && (
+              <div className="flex gap-2 items-end mb-3">
+                <div className="w-8">
+                  {showImg8 === true ? (
+                    <img className="rounded-full" src={agentImage} alt="" />
+                  ) : (
+                    <div> </div>
+                  )}
+                </div>
+                <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                  {showMsg6 && (
+                    <div className="flex gap-2 items-end ">
+                      <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                        {msg3}
+                      </p>
+                    </div>
+                  )}
+                  {/* {msg3} */}
+                </p>
+              </div>
+            )}
+            {/* <p>{msg3}</p> */}
+
+            {btn3 &&
+              (response2 === "Yes" ? (
+                <div className="flex gap-2 items-end mb-3">
+                  <div className="w-8">
+                    {showImg9 === true ? (
+                      <img className="rounded-full" src={agentImage} alt="" />
+                    ) : (
+                      <div> </div>
+                    )}
+                  </div>
+                  <div className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                    <button
+                      className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
+                      onClick={() => reply3("Yes")}
+                    >
+                      Yes
+                    </button>
+                    <button
+                      className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
+                      onClick={() => reply3("No")}
+                    >
+                      No
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex gap-2 items-end mb-3">
+                  <div className="w-8">
+                    {showImg10 === true ? (
+                      <img className="rounded-full" src={agentImage} alt="" />
+                    ) : (
+                      <div> </div>
+                    )}
+                  </div>
+                  <div className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] flex flex-col gap-2">
+                    <button
+                      className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
+                      onClick={() => reply3("No")}
+                    >
+                      No
+                    </button>
+                    <button
+                      className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
+                      onClick={() => reply3("Mediciad")}
+                    >
+                      Medicaid
+                    </button>
+                    <button
+                      className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
+                      onClick={() => reply3("Medicare")}
+                    >
+                      Medicare
+                    </button>
+                  </div>
+                </div>
+              ))}
+            {/* {btn3 &&
+              (response2 === "Yes" ? (
+                <div>
+                  <button onClick={() => reply3("Yes")}>Yes</button>
+                  <button onClick={() => reply3("No")}>No</button>
+                </div>
+              ) : (
+                <div>
+                  <button onClick={() => reply3("No")}>No</button>
+                  <button onClick={() => reply3("Mediciad")}>Medicaid</button>
+                  <button onClick={() => reply3("Medicare")}>Medicare</button>
+                </div>
+              ))} */}
+          </div>
+        )}
+
+        {/* step 3 ends */}
+
+        {/* reply section 3 */}
+        {showUserReply3 && (
+          <div className="flex items-end justify-end gap-2 my-6">
+            <p className="bg-blue-600 text-white w-fit p-3 rounded-md max-w-[305px] ">
+              {response3}
+            </p>
+            <div className="w-8">
+              <img src={userImage} alt="" />
+            </div>
+          </div>
+        )}
+        {/* End reply section 3 */}
+
+        {/* step 4 */}
+        {step4 && (
+          <div id="step-4">
+            {showMsg7 && (
+              <div className="flex gap-2 items-end mb-3">
+                <div className="w-8">
+                  {showImg11 === true ? (
+                    <img className="rounded-full" src={agentImage} alt="" />
+                  ) : (
+                    <div> </div>
+                  )}
+                </div>
+                <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                  {showMsg6 && (
+                    <div className="flex gap-2 items-end ">
+                      <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                        {msg4}
+                      </p>
+                    </div>
+                  )}
+                </p>
+              </div>
+            )}
+            {/* <p>{msg4}</p> */}
+            {showMsg8 && (
+              <div className="flex gap-2 items-end mb-3">
+                <div className="w-8">
+                  {showImg12 === true ? (
+                    <img className="rounded-full" src={agentImage} alt="" />
+                  ) : (
+                    <div> </div>
+                  )}
+                </div>
+                <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                  {showMsg6 && (
+                    <div className="flex gap-2 items-end ">
+                      <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                        {msg5}
+                      </p>
+                    </div>
+                  )}
+                </p>
+              </div>
+            )}
+            {/* <p>{msg5}</p> */}
+            {showMsg9 && (
+              <div className="flex gap-2 items-end mb-3">
+                <div className="w-8">
+                  {showImg13 === true ? (
+                    <img className="rounded-full" src={agentImage} alt="" />
+                  ) : (
+                    <div> </div>
+                  )}
+                </div>
+                <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                  {showMsg6 && (
+                    <div className="flex gap-2 items-end ">
+                      <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                        <a
+                          className="bg-blue-600 py-2 px-4 rounded-full text-white"
+                          href={msg6}
+                        >
+                          {msg6_1}
+                        </a>
+                      </p>
+                    </div>
+                  )}
+                </p>
+              </div>
+            )}
+            {/* <a href={msg6}>{msg6_1}</a> */}
+          </div>
+        )}
+        {/* step 4 ends */}
+
+        {showMsg9 && (
+          <div className="flex items-center justify-around my-10">
+            <div className="h-[1px] w-[150px] bg-gray-300 "></div>
+            <span className="text-gray-400 text-[12px]">Chat Closed</span>
+            <div className="h-[1px] w-[150px] bg-gray-300 "></div>
+          </div>
+        )}
+      </div>
 
       <Footer />
     </div>
