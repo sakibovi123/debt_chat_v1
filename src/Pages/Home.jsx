@@ -242,6 +242,7 @@ function Home() {
     } else {
       // code here
       setStep4(true);
+      setshowUserReply3(true);
       setResponse3(value);
 
       setTimeout(() => {
