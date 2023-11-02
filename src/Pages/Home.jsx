@@ -239,7 +239,9 @@ function Home() {
         setMsg6("+18556900292");
         setMsg6_1("(855) 690-0292");
       }, 2300);
-    } else {
+    }
+    // else if () 
+    else {
       // code here
       setStep4(true);
       setshowUserReply3(true);
@@ -264,11 +266,14 @@ function Home() {
         setShowImg12(false);
         setShowImg13(true);
         setShowMsg9(true);
-        setMsg6("+18556900292");
-        setMsg6_1("(855) 690-0292");
+        setMsg6("+18445590632");
+        setMsg6_1("(844) 559-0632");
       }, 2300);
     }
   };
+
+
+
 
   useEffect(() => {
     step1();
