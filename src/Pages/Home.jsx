@@ -198,7 +198,7 @@ function Home() {
       setTimeout(() => {
         setShowImg8(true);
         setShowMsg6(true);
-        setMsg3("Are you on medicaid or medicare?");
+        setMsg3("Are you on Debt Relief, ACA or Medicare?");
       }, 2000);
 
       setTimeout(() => {
@@ -264,8 +264,19 @@ function Home() {
         setShowImg12(false);
         setShowImg13(true);
         setShowMsg9(true);
-        setMsg6("+18556900292");
-        setMsg6_1("(855) 690-0292");
+        if (value === "Debt") {
+          setMsg6("+18556900292");
+          setMsg6_1("(855) 690-0292");
+        } else if (value === "ACA") {
+          setMsg6("+18445590632");
+          setMsg6_1("(844) 559-0632");
+        } else if (value === "Medicare") {
+          setMsg6("+18885440239");
+          setMsg6_1("(888) 544-0239");
+        } else {
+          setMsg6("+18556900292");
+          setMsg6_1("(855) 690-0292");
+        }
       }, 2300);
     }
   };
@@ -520,15 +531,15 @@ function Home() {
                   <div className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] flex flex-col gap-2">
                     <button
                       className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
-                      onClick={() => reply3("No")}
+                      onClick={() => reply3("Debt")}
                     >
-                      No
+                      Debt Relief
                     </button>
                     <button
                       className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
-                      onClick={() => reply3("Mediciad")}
+                      onClick={() => reply3("ACA")}
                     >
-                      Medicaid
+                      ACA
                     </button>
                     <button
                       className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
@@ -630,7 +641,7 @@ function Home() {
                       <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
                         <a
                           className="bg-blue-600 py-2 px-4 rounded-full text-white"
-                          href={msg6}
+                          href={`tel:${msg6}`}
                         >
                           {msg6_1}
                         </a>
