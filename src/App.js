@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import agentImage from "./assets/agent.jpeg";
 import userImage from "./assets/user-avatar.png";
+import { BsThreeDots } from "react-icons/bs";
 import {
   BrowserRouter as Router,
   Routes,
@@ -16,6 +17,14 @@ import React, { useEffect, useState } from "react";
 
 function App() {
   const [loading, setLoading] = useState(false);
+  const [loading2, setLoading2] = useState(false);
+  const [loading3, setLoading3] = useState(false);
+  const [loading4, setLoading4] = useState(false);
+  const [loading5, setLoading5] = useState(false);
+  const [loading6, setLoading6] = useState(false);
+  const [loading7, setLoading7] = useState(false);
+  const [loading8, setLoading8] = useState(false);
+  const [loading9, setLoading9] = useState(false);
 
   const [hello, setHello] = useState("");
   const [evelyn, setEvelyn] = useState("");
@@ -86,19 +95,32 @@ function App() {
 
   const step1 = () => {
     setLoading(true);
+
     setTimeout(() => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 400);
       setShowMsg1(true);
       setHello("Hello");
       setShowImg1(true);
-    }, 700);
+    }, 1000);
+
+    setLoading2(true);
     setTimeout(() => {
+      setTimeout(() => {
+        setLoading2(false);
+      }, 400);
       setShowMsg2(true);
       setEvelyn("I'm Evelyn from Debt Settlement.");
       setShowImg1(false);
       setShowImg2(true);
     }, 1600);
 
+    setLoading3(true);
     setTimeout(() => {
+      setTimeout(() => {
+        setLoading3(false);
+      }, 400);
       setShowMsg3(true);
       setQualify(
         "Do you want to know if you qualify for over $10,000 in debt relief? Tap Yes! 😃"
@@ -113,7 +135,7 @@ function App() {
       setShowImg2(false);
       setShowImg3(false);
       setShowImg4(true);
-    }, 4000);
+    }, 3000);
   };
 
   //   const reply = (value) => {
@@ -152,17 +174,24 @@ function App() {
       setTimeout(() => {
         setStep2(true);
       }, 2000);
-
+      setLoading4(true);
       setTimeout(() => {
+        setTimeout(() => {
+          setLoading4(false);
+        }, 400);
         setMsg1("Alright, let me ask you two quick questions.");
       }, 1200);
 
+      setLoading5(true);
       setTimeout(() => {
+        setTimeout(() => {
+          setLoading5(false);
+        }, 400);
         setShowImg5(false);
         setShowMsg5(true);
         setShowImg6(true);
         setMsg2("Do you have more than $15,000 in debt? Press Yes or No.");
-      }, 2500);
+      }, 2000);
 
       // setBtn2(true)
       setTimeout(() => {
@@ -183,19 +212,23 @@ function App() {
 
       setTimeout(() => {
         setStep3(true);
-      }, 1200);
+      }, 400);
 
+      setLoading6(true);
       setTimeout(() => {
+        setTimeout(() => {
+          setLoading6(false);
+        }, 800);
         setShowImg8(true);
         setShowMsg6(true);
         setMsg3("Would you like to Clear Your Debt?");
-      }, 2000);
+      }, 1800);
 
       setTimeout(() => {
         setShowImg8(false);
         setShowImg9(true);
         setBtn3(true);
-      }, 3000);
+      }, 2800);
     } else {
       // code here
       setshowUserReply2(true);
@@ -205,7 +238,11 @@ function App() {
         setStep3(true);
       }, 1200);
 
+      setLoading6(true);
       setTimeout(() => {
+        setTimeout(() => {
+          setLoading6(false);
+        }, 800);
         setShowImg8(true);
         setShowMsg6(true);
         setMsg3("Are you on Debt Relief, ACA or Medicare?");
@@ -226,15 +263,29 @@ function App() {
       setStep4(true);
       setResponse3("Yes");
 
+      setLoading7(true);
       setTimeout(() => {
+        setTimeout(() => {
+          setLoading7(false);
+        }, 400);
         setShowImg11(true);
         setShowMsg7(true);
         setMsg4("🎉 Congratulations! 🎁");
       }, 1200);
+
+      setLoading8(true);
+      setLoading9(true);
       setTimeout(() => {
+        setTimeout(() => {
+          setLoading8(false);
+        }, 400);
         setShowImg11(false);
         setShowImg12(true);
         setShowMsg8(true);
+
+        setTimeout(() => {
+          setLoading9(false);
+        }, 800);
         setMsg5(
           "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
         );
@@ -255,18 +306,34 @@ function App() {
       setshowUserReply3(true);
       setResponse3(value);
 
+      setLoading7(true);
       setTimeout(() => {
+        setTimeout(() => {
+          setLoading7(false);
+        }, 400);
         setShowImg11(true);
         setShowMsg7(true);
         setMsg4("🎉 Congratulations! 🎁");
       }, 1200);
+
+      setLoading8(true);
+      setLoading9(true);
       setTimeout(() => {
+        setTimeout(() => {
+          setLoading8(false);
+        }, 400);
         setShowImg11(false);
         setShowImg12(true);
         setShowMsg8(true);
+
+        setTimeout(() => {
+          setLoading9(false);
+        }, 800);
         setMsg5(
           "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
         );
+        // setMsg6("+18556900292");
+        // setMsg6_1("(855) 690-0292");
       }, 1500);
 
       setTimeout(() => {
@@ -317,7 +384,13 @@ function App() {
                     "bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px]"
                   }
                 >
-                  {hello}
+                  {loading === true ? (
+                    <div>
+                      <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                    </div>
+                  ) : (
+                    hello
+                  )}
                 </p>
               </div>
             )}
@@ -332,7 +405,14 @@ function App() {
                   )}
                 </div>
                 <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
-                  {evelyn}
+                  {loading2 === true ? (
+                    <div>
+                      <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                    </div>
+                  ) : (
+                    evelyn
+                  )}
+                  {/* {evelyn} */}
                 </p>
               </div>
             )}
@@ -347,7 +427,14 @@ function App() {
                   )}
                 </div>
                 <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
-                  {qualify}
+                  {loading3 === true ? (
+                    <div>
+                      <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                    </div>
+                  ) : (
+                    qualify
+                  )}
+                  {/* qualify */}
                 </p>
               </div>
             )}
@@ -399,7 +486,14 @@ function App() {
                   )}
                 </div>
                 <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
-                  {msg1}
+                  {loading4 === true ? (
+                    <div>
+                      <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                    </div>
+                  ) : (
+                    msg1
+                  )}
+                  {/* msg1 */}
                 </p>
               </div>
             )}
@@ -415,7 +509,14 @@ function App() {
                   )}
                 </div>
                 <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
-                  {msg2}
+                  {loading5 === true ? (
+                    <div>
+                      <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                    </div>
+                  ) : (
+                    msg2
+                  )}
+                  {/* msg2 */}
                 </p>
               </div>
             )}
@@ -494,7 +595,14 @@ function App() {
                     {showMsg6 && (
                       <div className="flex gap-2 items-end ">
                         <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
-                          {msg3}
+                          {loading6 === true ? (
+                            <div>
+                              <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                            </div>
+                          ) : (
+                            msg3
+                          )}
+                          {/* msg3 */}
                         </p>
                       </div>
                     )}
@@ -607,7 +715,14 @@ function App() {
                     {showMsg6 && (
                       <div className="flex gap-2 items-end ">
                         <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
-                          {msg4}
+                          {loading7 === true ? (
+                            <div>
+                              <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                            </div>
+                          ) : (
+                            msg4
+                          )}
+                          {/* {msg4} */}
                         </p>
                       </div>
                     )}
@@ -628,7 +743,14 @@ function App() {
                     {showMsg6 && (
                       <div className="flex gap-2 items-end ">
                         <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
-                          {msg5}
+                          {loading9 === true ? (
+                            <div>
+                              <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                            </div>
+                          ) : (
+                            msg5
+                          )}
+                          {/* {msg5} */}
                         </p>
                       </div>
                     )}
@@ -669,7 +791,9 @@ function App() {
           {showMsg9 && (
             <div className="grid grid-cols-3 items-center justify-around mt-10 mb-24">
               <div className="h-[1px] w-full bg-gray-300 "></div>
-              <span className="text-gray-400 text-[12px] text-center">Chat Closed</span>
+              <span className="text-gray-400 text-[12px] text-center">
+                Chat Closed
+              </span>
               <div className="h-[1px] w-full max-w-[150px] bg-gray-300 "></div>
             </div>
           )}

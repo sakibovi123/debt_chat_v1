@@ -35,16 +35,28 @@ const Footer = () => {
 
         <p className="text-blue-500">
           <a
-            href="https://savingproviders.com/survey2/terms.html"
+            href="https://debtreliefhelpdesk.com/chat/en/pp.html"
             target="_blank"
           >
             Privacy Policy
           </a>{" "}
           <span>|</span>{" "}
-          <a href="https://savingproviders.com/survey2/privacy.html" target="_blank">Terms and Conditions</a>
+          <a
+            href="https://debtreliefhelpdesk.com/chat/en/tos.html"
+            target="_blank"
+          >
+            Terms and Conditions
+          </a>{" "}
+          <span>|</span>{" "}
+          <a
+            href="https://debtreliefhelpdesk.com/chat/en/cu.html"
+            target="_blank"
+          >
+            Contact Us
+          </a>
         </p>
       </div>
     </div>
   );
-}
-export default Footer
+};
+export default Footer;
