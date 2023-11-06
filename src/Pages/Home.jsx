@@ -497,7 +497,7 @@ function Home() {
         setSecondImg(true);
 
         setMsg20_2(
-          "Call this numberTap the number button below to call now and eliminate your debt, it only takes 2 minutes."
+          "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
         );
       }, 1800);
 
@@ -1244,7 +1244,7 @@ function Home() {
                     ) : (
                       <a
                         href={`tel:${acaNumber}`}
-                        className="bg-blue-600 py-1 px-2 rounded text-white"
+                        className="bg-blue-600 py-1 px-2 rounded-full text-white"
                       >
                         {msg20_3}
                       </a>
