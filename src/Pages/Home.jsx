@@ -250,6 +250,7 @@ function Home() {
   };
 
   const reply3 = (value) => {
+    setResponse3(value);
     setBtn3(false);
     if (value === "Yes") {
       setshowUserReply3(true);
@@ -297,7 +298,6 @@ function Home() {
       // code here
       setStep4(true);
       setshowUserReply3(true);
-      setResponse3(value);
 
       setLoading7(true);
       setTimeout(() => {
@@ -306,7 +306,7 @@ function Home() {
         }, 400);
         setShowImg11(true);
         setShowMsg7(true);
-        setMsg4("🎉 Congratulations! 🎁");
+        setMsg4("Are you in Debt Relief or ACA or Medicare?");
       }, 1200);
 
       setLoading8(true);
@@ -405,7 +405,7 @@ function Home() {
         setMsg6_1("(855) 690-0292");
       }
     }, 2300);
-  }
+  };
 
   useEffect(() => {
     step1();
