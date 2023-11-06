@@ -86,6 +86,12 @@ function Home() {
   const [yes, setYes] = useState("Yes");
   const [no, setNo] = useState("No");
 
+  // medic debt step
+  const [ step6, setStep6 ] = useState(false)
+  const [ response6, setResponse6 ] = useState("")
+  const [ msg7, setMsg7 ] = useState("")
+  const [ msg8, setMsg8 ] = useState("")
+
   const step1 = () => {
     setLoading(true);
 
@@ -767,9 +773,9 @@ function Home() {
                             // change here for the optionsss
                             <div>
                                 <p>{msg4}</p>
-                                <button onClick={() => reply3("No")}>No</button>
-                    <button onClick={() => reply3("Mediciad")}>Medicaid</button>
-                    <button onClick={() => reply3("Medicare")}>Medicare</button>
+                                <button onClick={() => reply4("Debt")}>Debt</button>
+                                <button onClick={() => reply4("Mediciad")}>Medicaid</button>
+                                <button onClick={() => reply4("Medicare")}>Medicare</button>
                             </div>
                             
                           )}
