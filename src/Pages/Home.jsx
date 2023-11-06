@@ -306,7 +306,7 @@ function Home() {
         }, 400);
         setShowImg11(true);
         setShowMsg7(true);
-        setMsg4("🎉 Congratulations! 🎁");
+        setMsg4("Are you in debt relief or ACA or Medicare");
       }, 1200);
 
       setLoading8(true);
@@ -323,7 +323,7 @@ function Home() {
           setLoading9(false);
         }, 800);
         setMsg5(
-          "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
+          ""
         );
         // setMsg6("+18556900292");
         // setMsg6_1("(855) 690-0292");
@@ -764,7 +764,14 @@ function Home() {
                               <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
                             </div>
                           ) : (
-                            msg4
+                            // change here for the optionsss
+                            <div>
+                                <p>{msg4}</p>
+                                <button onClick={() => reply3("No")}>No</button>
+                    <button onClick={() => reply3("Mediciad")}>Medicaid</button>
+                    <button onClick={() => reply3("Medicare")}>Medicare</button>
+                            </div>
+                            
                           )}
                           {/* {msg4} */}
                         </p>
