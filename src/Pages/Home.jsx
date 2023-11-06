@@ -256,6 +256,7 @@ function Home() {
   };
 
   const reply3 = (value) => {
+    setResponse3(value);
     setBtn3(false);
     if (value === "Yes") {
       setshowUserReply3(true);
@@ -303,7 +304,6 @@ function Home() {
       // code here
       setStep4(true);
       setshowUserReply3(true);
-      setResponse3(value);
 
       setLoading7(true);
       setTimeout(() => {
@@ -328,9 +328,7 @@ function Home() {
         setTimeout(() => {
           setLoading9(false);
         }, 800);
-        setMsg5(
-          ""
-        );
+        setMsg5("");
         // setMsg6("+18556900292");
         // setMsg6_1("(855) 690-0292");
       }, 1500);
@@ -357,61 +355,88 @@ function Home() {
     }
   };
 
+  // vars for reply 4
+  const [ response20, setResponse20 ] = useState("")
+  const [ msg20_1, setMsg20_1 ] = useState("")
+  const [ msg20_2, setMsg20_2 ] = useState("")
+  const [ msg20_3, setMsg20_3 ] = useState("")
+
   const reply4 = (value) => {
-    setStep5(true);
-    setshowUserReply3(true);
-    setResponse4(value);
+    setShowMsg6(false)
+    if( value === "ACA" ) {
+        setResponse20(value)
+        setMsg20_1("Congratulations!")
 
-    setLoading7(true);
-    setTimeout(() => {
-      setTimeout(() => {
-        setLoading7(false);
-      }, 400);
-      setShowImg14(true);
-      setShowMsg10(true);
-      setMsg4("🎉 Congratulations! 🎁");
-    }, 1200);
+        setMsg20_2("Call this number")
+        setMsg20_3("Number goes here")
+    } else if ( value === "Mediciad" ) {
+        setResponse20(value)
+        setMsg20_1("Congratulations!")
 
-    setLoading8(true);
-    setLoading9(true);
-    setTimeout(() => {
-      setTimeout(() => {
-        setLoading8(false);
-      }, 400);
-      setShowImg11(false);
-      setShowImg12(true);
-      setShowMsg8(true);
+        setMsg20_2("Call this number")
+        setMsg20_3("Number goes here")
+    } else {
+        setResponse20(value)
+        setMsg20_1("Congratulations!")
 
-      setTimeout(() => {
-        setLoading9(false);
-      }, 800);
-      setMsg5(
-        "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
-      );
-      // setMsg6("+18556900292");
-      // setMsg6_1("(855) 690-0292");
-    }, 1500);
+        setMsg20_2("Call this number")
+        setMsg20_3("Number goes here")
+    }
 
-    setTimeout(() => {
-      setShowImg11(false);
-      setShowImg12(false);
-      setShowImg13(true);
-      setShowMsg9(true);
-      if (value === "Debt") {
-        setMsg6("+18556900292");
-        setMsg6_1("(855) 690-0292");
-      } else if (value === "ACA") {
-        setMsg6("+18445590632");
-        setMsg6_1("(844) 559-0632");
-      } else if (value === "Medicare") {
-        setMsg6("+18885440239");
-        setMsg6_1("(888) 544-0239");
-      } else {
-        setMsg6("+18556900292");
-        setMsg6_1("(855) 690-0292");
-      }
-    }, 2300);
-  }
+    // setStep5(true);
+    // setshowUserReply3(true);
+    // setResponse4(value);
+
+    // setLoading7(true);
+    // setTimeout(() => {
+    //   setTimeout(() => {
+    //     setLoading7(false);
+    //   }, 400);
+    //   setShowImg14(true);
+    //   setShowMsg10(true);
+    //   setMsg4("🎉 Congratulations! 🎁");
+    // }, 1200);
+
+    // setLoading8(true);
+    // setLoading9(true);
+    // setTimeout(() => {
+    //   setTimeout(() => {
+    //     setLoading8(false);
+    //   }, 400);
+    //   setShowImg11(false);
+    //   setShowImg12(true);
+    //   setShowMsg8(false);
+
+    //   setTimeout(() => {
+    //     setLoading9(false);
+    //   }, 800);
+    //   setMsg5(
+    //     "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
+    //   );
+    //   // setMsg6("+18556900292");
+    //   // setMsg6_1("(855) 690-0292");
+    // }, 1500);
+
+    // setTimeout(() => {
+    //   setShowImg11(false);
+    //   setShowImg12(false);
+    //   setShowImg13(true);
+    //   setShowMsg9(false);
+    //   if (value === "Debt") {
+    //     setMsg6("+18556900292");
+    //     setMsg6_1("(855) 690-0292");
+    //   } else if (value === "ACA") {
+    //     setMsg6("+18445590632");
+    //     setMsg6_1("(844) 559-0632");
+    //   } else if (value === "Medicare") {
+    //     setMsg6("+18885440239");
+    //     setMsg6_1("(888) 544-0239");
+    //   } else {
+    //     setMsg6("+18556900292");
+    //     setMsg6_1("(855) 690-0292");
+    //   }
+    // }, 2300);
+  };
 
   useEffect(() => {
     step1();
@@ -772,12 +797,11 @@ function Home() {
                           ) : (
                             // change here for the optionsss
                             <div>
-                                <p>{msg4}</p>
-                                <button onClick={() => reply4("Debt")}>Debt</button>
-                                <button onClick={() => reply4("Mediciad")}>Medicaid</button>
-                                <button onClick={() => reply4("Medicare")}>Medicare</button>
+                              <p>{msg4}</p>
+                              {/* <button onClick={() => reply3("ACA")}>ACA</button>
+                                <button onClick={() => reply3("Mediciad")}>Medicaid</button>
+                                <button onClick={() => reply3("Medicare")}>Medicare</button> */}
                             </div>
-                            
                           )}
                           {/* {msg4} */}
                         </p>
@@ -786,8 +810,78 @@ function Home() {
                   </p>
                 </div>
               )}
-              {/* <p>{msg4}</p> */}
-              {showMsg8 && (
+              {response3 === "Yes" ? (
+                <div>
+                  {/* <p>{msg4}</p> */}
+                  {showMsg8 && (
+                    <div className="flex gap-2 items-end mb-3">
+                      <div className="w-8">
+                        {showImg12 === true ? (
+                          <img
+                            className="rounded-full"
+                            src={agentImage}
+                            alt=""
+                          />
+                        ) : (
+                          <div> </div>
+                        )}
+                      </div>
+                      <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                        {showMsg6 && (
+                          <div className="flex gap-2 items-end ">
+                            <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                              {loading9 === true ? (
+                                <div>
+                                  <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                                </div>
+                              ) : (
+                                msg5
+                              )}
+                              {/* {msg5} */}
+                            </p>
+                          </div>
+                        )}
+                      </p>
+                    </div>
+                  )}
+                  {/* <p>{msg5}</p> */}
+                  {showMsg9 && (
+                    <div className="flex gap-2 items-end mb-3">
+                      <div className="w-8">
+                        {showImg13 === true ? (
+                          <img
+                            className="rounded-full"
+                            src={agentImage}
+                            alt=""
+                          />
+                        ) : (
+                          <div> </div>
+                        )}
+                      </div>
+                      <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                        {showMsg6 && (
+                          <div className="flex gap-2 items-end ">
+                            <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                              <a
+                                className="bg-blue-600 py-2 px-4 rounded-full text-white"
+                                href={`tel:${msg6}`}
+                              >
+                                {msg6_1}
+                              </a>
+                            </p>
+                          </div>
+                        )}
+                      </p>
+                    </div>
+                  )}
+                  {/* <a href={msg6}>{msg6_1}</a> */}
+                </div>
+              ) : (
+                // <div>
+                //   <button onClick={() => reply3("ACA")}>ACA</button>
+                //   <button onClick={() => reply3("Mediciad")}>Medicaid</button>
+                //   <button onClick={() => reply3("Medicare")}>Medicare</button>
+                // </div>
                 <div className="flex gap-2 items-end mb-3">
                   <div className="w-8">
                     {showImg12 === true ? (
@@ -805,7 +899,26 @@ function Home() {
                               <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
                             </div>
                           ) : (
-                            msg5
+                            <div className="flex flex-col gap-2 w-fit">
+                              <button
+                                className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
+                                onClick={() => reply4("ACA")}
+                              >
+                                ACA
+                              </button>
+                              <button
+                                className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
+                                onClick={() => reply4("Mediciad")}
+                              >
+                                Medicaid
+                              </button>
+                              <button
+                                className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
+                                onClick={() => reply4("Medicare")}
+                              >
+                                Medicare
+                              </button>
+                            </div>
                           )}
                           {/* {msg5} */}
                         </p>
@@ -814,37 +927,10 @@ function Home() {
                   </p>
                 </div>
               )}
-              {/* <p>{msg5}</p> */}
-              {showMsg9 && (
-                <div className="flex gap-2 items-end mb-3">
-                  <div className="w-8">
-                    {showImg13 === true ? (
-                      <img className="rounded-full" src={agentImage} alt="" />
-                    ) : (
-                      <div> </div>
-                    )}
-                  </div>
-                  <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
-                    {showMsg6 && (
-                      <div className="flex gap-2 items-end ">
-                        <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
-                          <a
-                            className="bg-blue-600 py-2 px-4 rounded-full text-white"
-                            href={`tel:${msg6}`}
-                          >
-                            {msg6_1}
-                          </a>
-                        </p>
-                      </div>
-                    )}
-                  </p>
-                </div>
-              )}
-              {/* <a href={msg6}>{msg6_1}</a> */}
             </div>
           )}
           {/* step 4 ends */}
-
+    
           {/* step 5 */}
           {step5 && (
             <div id="step-5">
@@ -945,6 +1031,19 @@ function Home() {
             </div>
           )}
           {/* End step 5 */}
+
+          { /* sakib's beta code */ }
+
+          {
+            response20 && (
+                <div>
+                    <p>{response20}</p>
+                    <p>{msg20_1}</p>
+                    <p>{msg20_2}</p>
+                    <p>{msg20_3}</p>
+                </div>
+            )
+          }
 
           {showMsg9 && (
             <div className="grid grid-cols-3 items-center justify-around mt-10 mb-24">
