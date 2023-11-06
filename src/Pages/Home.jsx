@@ -306,7 +306,7 @@ function Home() {
         }, 400);
         setShowImg11(true);
         setShowMsg7(true);
-        setMsg4("Are you in Debt Relief or ACA or Medicare?");
+        setMsg4("Are you in debt relief or ACA or Medicare");
       }, 1200);
 
       setLoading8(true);
@@ -322,9 +322,7 @@ function Home() {
         setTimeout(() => {
           setLoading9(false);
         }, 800);
-        setMsg5(
-          "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
-        );
+        setMsg5("");
         // setMsg6("+18556900292");
         // setMsg6_1("(855) 690-0292");
       }, 1500);
@@ -764,7 +762,13 @@ function Home() {
                               <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
                             </div>
                           ) : (
-                            msg4
+                            // change here for the optionsss
+                            <div>
+                              <p>{msg4}</p>
+                              {/* <button onClick={() => reply3("ACA")}>ACA</button>
+                                <button onClick={() => reply3("Mediciad")}>Medicaid</button>
+                                <button onClick={() => reply3("Medicare")}>Medicare</button> */}
+                            </div>
                           )}
                           {/* {msg4} */}
                         </p>
@@ -773,8 +777,78 @@ function Home() {
                   </p>
                 </div>
               )}
-              {/* <p>{msg4}</p> */}
-              {showMsg8 && (
+              {response3 === "Yes" ? (
+                <div>
+                  {/* <p>{msg4}</p> */}
+                  {showMsg8 && (
+                    <div className="flex gap-2 items-end mb-3">
+                      <div className="w-8">
+                        {showImg12 === true ? (
+                          <img
+                            className="rounded-full"
+                            src={agentImage}
+                            alt=""
+                          />
+                        ) : (
+                          <div> </div>
+                        )}
+                      </div>
+                      <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                        {showMsg6 && (
+                          <div className="flex gap-2 items-end ">
+                            <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                              {loading9 === true ? (
+                                <div>
+                                  <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                                </div>
+                              ) : (
+                                msg5
+                              )}
+                              {/* {msg5} */}
+                            </p>
+                          </div>
+                        )}
+                      </p>
+                    </div>
+                  )}
+                  {/* <p>{msg5}</p> */}
+                  {showMsg9 && (
+                    <div className="flex gap-2 items-end mb-3">
+                      <div className="w-8">
+                        {showImg13 === true ? (
+                          <img
+                            className="rounded-full"
+                            src={agentImage}
+                            alt=""
+                          />
+                        ) : (
+                          <div> </div>
+                        )}
+                      </div>
+                      <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                        {showMsg6 && (
+                          <div className="flex gap-2 items-end ">
+                            <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                              <a
+                                className="bg-blue-600 py-2 px-4 rounded-full text-white"
+                                href={`tel:${msg6}`}
+                              >
+                                {msg6_1}
+                              </a>
+                            </p>
+                          </div>
+                        )}
+                      </p>
+                    </div>
+                  )}
+                  {/* <a href={msg6}>{msg6_1}</a> */}
+                </div>
+              ) : (
+                // <div>
+                //   <button onClick={() => reply3("ACA")}>ACA</button>
+                //   <button onClick={() => reply3("Mediciad")}>Medicaid</button>
+                //   <button onClick={() => reply3("Medicare")}>Medicare</button>
+                // </div>
                 <div className="flex gap-2 items-end mb-3">
                   <div className="w-8">
                     {showImg12 === true ? (
@@ -792,7 +866,26 @@ function Home() {
                               <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
                             </div>
                           ) : (
-                            msg5
+                            <div className="flex flex-col gap-2 w-fit">
+                              <button
+                                className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
+                                onClick={() => reply3("ACA")}
+                              >
+                                ACA
+                              </button>
+                              <button
+                                className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
+                                onClick={() => reply3("Mediciad")}
+                              >
+                                Medicaid
+                              </button>
+                              <button
+                                className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
+                                onClick={() => reply3("Medicare")}
+                              >
+                                Medicare
+                              </button>
+                            </div>
                           )}
                           {/* {msg5} */}
                         </p>
@@ -801,33 +894,6 @@ function Home() {
                   </p>
                 </div>
               )}
-              {/* <p>{msg5}</p> */}
-              {showMsg9 && (
-                <div className="flex gap-2 items-end mb-3">
-                  <div className="w-8">
-                    {showImg13 === true ? (
-                      <img className="rounded-full" src={agentImage} alt="" />
-                    ) : (
-                      <div> </div>
-                    )}
-                  </div>
-                  <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
-                    {showMsg6 && (
-                      <div className="flex gap-2 items-end ">
-                        <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
-                          <a
-                            className="bg-blue-600 py-2 px-4 rounded-full text-white"
-                            href={`tel:${msg6}`}
-                          >
-                            {msg6_1}
-                          </a>
-                        </p>
-                      </div>
-                    )}
-                  </p>
-                </div>
-              )}
-              {/* <a href={msg6}>{msg6_1}</a> */}
             </div>
           )}
           {/* step 4 ends */}
