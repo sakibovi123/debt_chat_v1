@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import agentImage from "./assets/agent.jpeg";
 import userImage from "./assets/user-avatar.png";
+import { BsThreeDots } from "react-icons/bs";
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,15 +15,13 @@ import {
 import Home from "./Pages/Home";
 import React, { useEffect, useState } from "react";
 
-function App() {
+function App () {
   return (
     <div>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home/>} />
       </Routes>
     </div>
   )
-  
 }
-
 export default App;
