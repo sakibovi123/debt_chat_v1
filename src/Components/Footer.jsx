@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="w-full bg-gray-200">
+    <div className="w-full bg-gray-200 mt-24">
       <div className="container max-w-[1280px] mx-auto text-center text-sm text-gray-500 px-4 py-8 sm:p-8 leading-6">
         <p className="mb-8">
           IMPORTANT DISCLAIMER: Programs range from 12 to 48 months. Customers

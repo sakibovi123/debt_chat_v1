@@ -49,7 +49,7 @@ function Home() {
   const [showMsg8, setShowMsg8] = useState(false);
   const [showMsg9, setShowMsg9] = useState(false);
   const [showMsg10, setShowMsg10] = useState(false);
-  const [showMsg11, setShowMsg11] = useState(false);
+  const [showMsgAca, setShowMsgAca] = useState(false);
 
   // show user reply
   const [showUserReply1, setshowUserReply1] = useState(false);
@@ -87,10 +87,10 @@ function Home() {
   const [no, setNo] = useState("No");
 
   // medic debt step
-  const [ step6, setStep6 ] = useState(false)
-  const [ response6, setResponse6 ] = useState("")
-  const [ msg7, setMsg7 ] = useState("")
-  const [ msg8, setMsg8 ] = useState("")
+  const [step6, setStep6] = useState(false);
+  const [response6, setResponse6] = useState("");
+  const [msg7, setMsg7] = useState("");
+  const [msg8, setMsg8] = useState("");
 
   const step1 = () => {
     setLoading(true);
@@ -258,6 +258,7 @@ function Home() {
   const reply3 = (value) => {
     setResponse3(value);
     setBtn3(false);
+    setShowMsgAca(true);
     if (value === "Yes") {
       setshowUserReply3(true);
       setStep4(true);
@@ -356,31 +357,164 @@ function Home() {
   };
 
   // vars for reply 4
-  const [ response20, setResponse20 ] = useState("")
-  const [ msg20_1, setMsg20_1 ] = useState("")
-  const [ msg20_2, setMsg20_2 ] = useState("")
-  const [ msg20_3, setMsg20_3 ] = useState("")
+  const [response20, setResponse20] = useState("");
+  const [msg20_1, setMsg20_1] = useState("");
+  const [msg20_2, setMsg20_2] = useState("");
+  const [msg20_3, setMsg20_3] = useState("");
 
+  // vars for reply 4 image
+  const [firstImg, setFirstImg] = useState(false);
+  const [secondImg, setSecondImg] = useState(false);
+  const [thirdImg, setThirdImg] = useState(false);
+
+  // vars for hiding div
+  const [hideFirst, setHideFirst] = useState(false);
+  const [hideSecond, setHideSecond] = useState(false);
+  const [hideThird, setHideThird] = useState(false);
+
+  // vars for setting numbers
+  const [acaNumber, setAcaNumber] = useState("");
+  // const [debtNumber, setDebtNumber] = useState("");
+  // const [medicareNumber, setmedicareNumber] = useState("");
+
+  // vars for loader
+  const [firstLoad, setFirstLoad] = useState(true);
+  const [secondLoad, setSecondLoad] = useState(true);
+  const [thirdLoad, setThirdLoad] = useState(true);
+
+  // vars for reply 4 loading
   const reply4 = (value) => {
-    setShowMsg6(false)
-    if( value === "ACA" ) {
-        setResponse20(value)
-        setMsg20_1("Congratulations!")
+    setShowMsgAca(false);
 
-        setMsg20_2("Call this number")
-        setMsg20_3("Number goes here")
-    } else if ( value === "Mediciad" ) {
-        setResponse20(value)
-        setMsg20_1("Congratulations!")
+    if (value === "ACA") {
+      setResponse20(value);
+      // setFirstImg(true);
+      setFirstLoad(true);
+      setTimeout(() => {
+        setTimeout(() => {
+          setFirstLoad(false);
+        }, 500);
+        setHideFirst(true);
+        setFirstImg(true);
+        setMsg20_1("🎉 Congratulations! 🎁");
+      }, 1200);
 
-        setMsg20_2("Call this number")
-        setMsg20_3("Number goes here")
+      // setFirstImg(false);
+
+      setSecondLoad(true);
+      setTimeout(() => {
+        setTimeout(() => {
+          setSecondLoad(false);
+        }, 800);
+        setHideSecond(true);
+        setFirstImg(false);
+        setSecondImg(true);
+
+        setMsg20_2(
+          "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
+        );
+      }, 1800);
+
+      setFirstImg(false);
+
+      setThirdLoad(true);
+      setTimeout(() => {
+        setTimeout(() => {
+          setThirdLoad(false);
+        }, 1200);
+        setHideThird(true);
+        setFirstImg(false);
+        setSecondImg(false);
+        setThirdImg(true);
+        setAcaNumber("+18445590632");
+        setMsg20_3("+18445590632");
+      }, 2400);
+    } else if (value === "Debt") {
+      setResponse20(value);
+      // setFirstImg(true);
+      setFirstLoad(true);
+      setTimeout(() => {
+        setTimeout(() => {
+          setFirstLoad(false);
+        }, 500);
+        setHideFirst(true);
+        setFirstImg(true);
+        setMsg20_1("🎉 Congratulations! 🎁");
+      }, 1200);
+
+      // setFirstImg(false);
+
+      setSecondLoad(true);
+      setTimeout(() => {
+        setTimeout(() => {
+          setSecondLoad(false);
+        }, 800);
+        setHideSecond(true);
+        setFirstImg(false);
+        setSecondImg(true);
+
+        setMsg20_2(
+          "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
+        );
+      }, 1800);
+
+      setFirstImg(false);
+
+      setThirdLoad(true);
+      setTimeout(() => {
+        setTimeout(() => {
+          setThirdLoad(false);
+        }, 1200);
+        setHideThird(true);
+        setFirstImg(false);
+        setSecondImg(false);
+        setThirdImg(true);
+        setAcaNumber("+18556900292");
+        setMsg20_3("+18556900292");
+      }, 2400);
     } else {
-        setResponse20(value)
-        setMsg20_1("Congratulations!")
+      setResponse20(value);
+      // setFirstImg(true);
+      setFirstLoad(true);
+      setTimeout(() => {
+        setTimeout(() => {
+          setFirstLoad(false);
+        }, 500);
+        setHideFirst(true);
+        setFirstImg(true);
+        setMsg20_1("🎉 Congratulations! 🎁");
+      }, 1200);
 
-        setMsg20_2("Call this number")
-        setMsg20_3("Number goes here")
+      // setFirstImg(false);
+
+      setSecondLoad(true);
+      setTimeout(() => {
+        setTimeout(() => {
+          setSecondLoad(false);
+        }, 800);
+        setHideSecond(true);
+        setFirstImg(false);
+        setSecondImg(true);
+
+        setMsg20_2(
+          "Call this numberTap the number button below to call now and eliminate your debt, it only takes 2 minutes."
+        );
+      }, 1800);
+
+      setFirstImg(false);
+
+      setThirdLoad(true);
+      setTimeout(() => {
+        setTimeout(() => {
+          setThirdLoad(false);
+        }, 1200);
+        setHideThird(true);
+        setFirstImg(false);
+        setSecondImg(false);
+        setThirdImg(true);
+        setAcaNumber("+18885440239");
+        setMsg20_3("+18885440239");
+      }, 2400);
     }
 
     // setStep5(true);
@@ -890,8 +1024,8 @@ function Home() {
                       <div> </div>
                     )}
                   </div>
-                  <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
-                    {showMsg6 && (
+                  {showMsgAca && (
+                    <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
                       <div className="flex gap-2 items-end ">
                         <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
                           {loading9 === true ? (
@@ -899,6 +1033,7 @@ function Home() {
                               <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
                             </div>
                           ) : (
+                            // aca mediciad and medicare buttons
                             <div className="flex flex-col gap-2 w-fit">
                               <button
                                 className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
@@ -908,9 +1043,9 @@ function Home() {
                               </button>
                               <button
                                 className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
-                                onClick={() => reply4("Mediciad")}
+                                onClick={() => reply4("Debt")}
                               >
-                                Medicaid
+                                Debt
                               </button>
                               <button
                                 className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
@@ -923,14 +1058,14 @@ function Home() {
                           {/* {msg5} */}
                         </p>
                       </div>
-                    )}
-                  </p>
+                    </p>
+                  )}
                 </div>
               )}
             </div>
           )}
           {/* step 4 ends */}
-    
+
           {/* step 5 */}
           {step5 && (
             <div id="step-5">
@@ -1032,20 +1167,97 @@ function Home() {
           )}
           {/* End step 5 */}
 
-          { /* sakib's beta code */ }
+          {/* sakib's beta code */}
 
-          {
-            response20 && (
-                <div>
-                    <p>{response20}</p>
-                    <p>{msg20_1}</p>
-                    <p>{msg20_2}</p>
-                    <p>{msg20_3}</p>
+          {response20 && (
+            <div>
+              {/* aca response of user */}
+              <div className="flex items-end justify-end gap-2 my-6">
+                <p className="bg-blue-600 text-white w-fit p-3 rounded-md max-w-[305px] ">
+                  {response20}
+                </p>
+                <div className="w-8">
+                  <img src={userImage} alt="" />
                 </div>
-            )
-          }
+              </div>
+              {/* end aca response of user*/}
 
-          {showMsg9 && (
+              {hideFirst && (
+                <div className="flex gap-2 items-end mb-3">
+                  <div className="w-8">
+                    {firstImg === true ? (
+                      <img className="rounded-full" src={agentImage} alt="" />
+                    ) : (
+                      <div> </div>
+                    )}
+                  </div>
+                  <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                    {firstLoad === true ? (
+                      <div>
+                        <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                      </div>
+                    ) : (
+                      msg20_1
+                    )}
+                    {/* {evelyn} */}
+                  </p>
+                </div>
+              )}
+              {/* <p>{msg20_1}</p> */}
+
+              {hideSecond && (
+                <div className="flex gap-2 items-end mb-3">
+                  <div className="w-8">
+                    {secondImg === true ? (
+                      <img className="rounded-full" src={agentImage} alt="" />
+                    ) : (
+                      <div> </div>
+                    )}
+                  </div>
+                  <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                    {secondLoad === true ? (
+                      <div>
+                        <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                      </div>
+                    ) : (
+                      msg20_2
+                    )}
+                    {/* {evelyn} */}
+                  </p>
+                </div>
+              )}
+              {/* <p>{msg20_2}</p> */}
+              {hideThird && (
+                <div className="flex gap-2 items-end mb-3">
+                  <div className="w-8">
+                    {thirdImg === true ? (
+                      <img className="rounded-full" src={agentImage} alt="" />
+                    ) : (
+                      <div> </div>
+                    )}
+                  </div>
+                  <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                    {thirdLoad === true ? (
+                      <div>
+                        <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                      </div>
+                    ) : (
+                      <a
+                        href={`tel:${acaNumber}`}
+                        className="bg-blue-600 py-1 px-2 rounded text-white"
+                      >
+                        {msg20_3}
+                      </a>
+                    )}
+                    {/* {evelyn} */}
+                  </p>
+                </div>
+              )}
+              {/* <p>{msg20_3}</p> */}
+            </div>
+          )}
+
+          {hideThird && (
             <div className="grid grid-cols-3 items-center justify-around mt-10 mb-24">
               <div className="h-[1px] w-full bg-gray-300 "></div>
               <span className="text-gray-400 text-[12px] text-center">
