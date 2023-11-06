@@ -6,10 +6,6 @@ import userImage from "../assets/user-avatar.png";
 import { BsThreeDots } from "react-icons/bs";
 
 function Home() {
-
-    
-
-
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
   const [loading3, setLoading3] = useState(false);
@@ -40,6 +36,7 @@ function Home() {
   const [showImg11, setShowImg11] = useState(false);
   const [showImg12, setShowImg12] = useState(false);
   const [showImg13, setShowImg13] = useState(false);
+  const [showImg14, setShowImg14] = useState(false);
 
   // msg div show or hide
   const [showMsg1, setShowMsg1] = useState(false);
@@ -52,6 +49,7 @@ function Home() {
   const [showMsg8, setShowMsg8] = useState(false);
   const [showMsg9, setShowMsg9] = useState(false);
   const [showMsg10, setShowMsg10] = useState(false);
+  const [showMsg11, setShowMsg11] = useState(false);
 
   // show user reply
   const [showUserReply1, setshowUserReply1] = useState(false);
@@ -79,6 +77,7 @@ function Home() {
 
   // step4
   const [step4, setStep4] = useState(false);
+  const [step5, setStep5] = useState(false);
   const [msg4, setMsg4] = useState("");
   const [msg5, setMsg5] = useState("");
   const [msg6, setMsg6] = useState("");
@@ -352,6 +351,62 @@ function Home() {
     }
   };
 
+  const reply4 = (value) => {
+    setStep5(true);
+    setshowUserReply3(true);
+    setResponse4(value);
+
+    setLoading7(true);
+    setTimeout(() => {
+      setTimeout(() => {
+        setLoading7(false);
+      }, 400);
+      setShowImg14(true);
+      setShowMsg10(true);
+      setMsg4("🎉 Congratulations! 🎁");
+    }, 1200);
+
+    setLoading8(true);
+    setLoading9(true);
+    setTimeout(() => {
+      setTimeout(() => {
+        setLoading8(false);
+      }, 400);
+      setShowImg11(false);
+      setShowImg12(true);
+      setShowMsg8(true);
+
+      setTimeout(() => {
+        setLoading9(false);
+      }, 800);
+      setMsg5(
+        "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
+      );
+      // setMsg6("+18556900292");
+      // setMsg6_1("(855) 690-0292");
+    }, 1500);
+
+    setTimeout(() => {
+      setShowImg11(false);
+      setShowImg12(false);
+      setShowImg13(true);
+      setShowMsg9(true);
+      if (value === "Debt") {
+        setMsg6("+18556900292");
+        setMsg6_1("(855) 690-0292");
+      } else if (value === "ACA") {
+        setMsg6("+18445590632");
+        setMsg6_1("(844) 559-0632");
+      } else if (value === "Medicare") {
+        setMsg6("+18885440239");
+        setMsg6_1("(888) 544-0239");
+      } else {
+        setMsg6("+18556900292");
+        setMsg6_1("(855) 690-0292");
+      }
+    }, 2300);
+  }
+
   useEffect(() => {
     step1();
   }, []);
@@ -616,13 +671,14 @@ function Home() {
                         <div> </div>
                       )}
                     </div>
-                    <div className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                    <div className=" bg-gray-200 w-fit  px-3 py-2 rounded-md max-w-[305px]  ">
                       <button
                         className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
                         onClick={() => reply3("Yes")}
                       >
                         Yes
                       </button>
+
                       <button
                         className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
                         onClick={() => reply3("No")}
@@ -640,24 +696,18 @@ function Home() {
                         <div> </div>
                       )}
                     </div>
-                    <div className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] flex flex-col gap-2">
+                    <div className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] flex gap-2">
                       <button
                         className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
-                        onClick={() => reply3("Debt")}
+                        onClick={() => reply3("Yes")}
                       >
-                        Debt Relief
+                        Yes
                       </button>
                       <button
                         className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
-                        onClick={() => reply3("ACA")}
+                        onClick={() => reply3("No")}
                       >
-                        ACA
-                      </button>
-                      <button
-                        className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
-                        onClick={() => reply3("Medicare")}
-                      >
-                        Medicare
+                        No
                       </button>
                     </div>
                   </div>
@@ -781,6 +831,107 @@ function Home() {
             </div>
           )}
           {/* step 4 ends */}
+
+          {/* step 5 */}
+          {step5 && (
+            <div id="step-5">
+              {showMsg10 && (
+                <div className="flex gap-2 items-end mb-3">
+                  <div className="w-8">
+                    {showImg14 === true ? (
+                      <img className="rounded-full" src={agentImage} alt="" />
+                    ) : (
+                      <div> </div>
+                    )}
+                  </div>
+                  <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                    {showMsg6 && (
+                      <div className="flex gap-2 items-end ">
+                        <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                          {loading6 === true ? (
+                            <div>
+                              <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
+                            </div>
+                          ) : (
+                            msg3
+                          )}
+                          {/* msg3 */}
+                        </p>
+                      </div>
+                    )}
+                    {/* {msg3} */}
+                  </p>
+                </div>
+              )}
+              {/* <p>{msg3}</p> */}
+
+              {btn3 &&
+                (response4 === "Yes" ? (
+                  <div className="flex gap-2 items-end mb-3">
+                    <div className="w-8">
+                      {showImg9 === true ? (
+                        <img className="rounded-full" src={agentImage} alt="" />
+                      ) : (
+                        <div> </div>
+                      )}
+                    </div>
+                    <div className=" bg-gray-200 w-fit  px-3 py-2 rounded-md max-w-[305px]  ">
+                      <button
+                        className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
+                        onClick={() => reply3("Yes")}
+                      >
+                        Yes
+                      </button>
+
+                      <button
+                        className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
+                        onClick={() => reply3("No")}
+                      >
+                        No
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex gap-2 items-end mb-3">
+                    <div className="w-8">
+                      {showImg10 === true ? (
+                        <img className="rounded-full" src={agentImage} alt="" />
+                      ) : (
+                        <div> </div>
+                      )}
+                    </div>
+                    <div className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] flex gap-2">
+                      <button
+                        className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
+                        onClick={() => reply3("Yes")}
+                      >
+                        Yes
+                      </button>
+                      <button
+                        className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full"
+                        onClick={() => reply3("No")}
+                      >
+                        No
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              {/* {btn3 &&
+                (response2 === "Yes" ? (
+                  <div>
+                    <button onClick={() => reply3("Yes")}>Yes</button>
+                    <button onClick={() => reply3("No")}>No</button>
+                  </div>
+                ) : (
+                  <div>
+                    <button onClick={() => reply3("No")}>No</button>
+                    <button onClick={() => reply3("Mediciad")}>Medicaid</button>
+                    <button onClick={() => reply3("Medicare")}>Medicare</button>
+                  </div>
+                ))} */}
+            </div>
+          )}
+          {/* End step 5 */}
 
           {showMsg9 && (
             <div className="grid grid-cols-3 items-center justify-around mt-10 mb-24">
