@@ -1,9 +1,12 @@
 const Header = () => {
+
+  const currentDate = new Date();
+    const dayOfWeek = currentDate.toLocaleString('en-us', { weekday: 'long' });
+    const date = currentDate.toLocaleDateString();
   return (
     <div className={"max-w-[900px] mx-auto mt-6"}>
       <p className={"text-center font-serif text-slate-700 font-bold px-2 text-md sm:text-lg  "}>
-        <span className={"text-red-600"}>Warning:</span> registration closes on
-        Tuesday, 10/31/2023 at midnight.
+        <span className={"text-red-600"}>Warning:</span> registration closes on {dayOfWeek}, {date} at midnight.
       </p>
       <h1 className={"text-center text-slate-700 font-bold px-2 text-xl sm:text-3xl mt-2"}>
         Debt Settlement Program: Discover your eligibility to receive over
