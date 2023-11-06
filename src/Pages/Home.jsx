@@ -866,6 +866,7 @@ function Home() {
                               <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
                             </div>
                           ) : (
+                            // aca mediciad and medicare buttons
                             <div className="flex flex-col gap-2 w-fit">
                               <button
                                 className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
