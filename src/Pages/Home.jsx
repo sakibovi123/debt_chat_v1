@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
-import agentImage from "../assets/agent.jpeg";
+import agentImage from "../assets/agent2.jpg";
 import userImage from "../assets/user-avatar.png";
 import { BsThreeDots } from "react-icons/bs";
 
@@ -94,32 +94,31 @@ function Home() {
 
   const step1 = () => {
     setLoading(true);
-
+    setShowMsg1(true);
+    setShowImg1(true);
     setTimeout(() => {
       setTimeout(() => {
         setLoading(false);
-      }, 400);
-      setShowMsg1(true);
+      }, 700);
       setHello("Hello");
-      setShowImg1(true);
-    }, 1000);
+    }, 1400);
 
     setLoading2(true);
     setTimeout(() => {
       setTimeout(() => {
         setLoading2(false);
-      }, 400);
+      }, 700);
       setShowMsg2(true);
       setEvelyn("I'm Evelyn from Debt Settlement.");
       setShowImg1(false);
       setShowImg2(true);
-    }, 1600);
+    }, 2100);
 
     setLoading3(true);
     setTimeout(() => {
       setTimeout(() => {
         setLoading3(false);
-      }, 400);
+      }, 700);
       setShowMsg3(true);
       setQualify(
         "Do you want to know if you qualify for over $10,000 in debt relief? Tap Yes! 😃"
@@ -127,14 +126,14 @@ function Home() {
       setShowImg1(false);
       setShowImg2(false);
       setShowImg3(true);
-    }, 2400);
+    }, 2800);
     setTimeout(() => {
       setButtonVisiblity(true);
       setShowImg1(false);
       setShowImg2(false);
       setShowImg3(false);
       setShowImg4(true);
-    }, 3000);
+    }, 3500);
   };
 
   //   const reply = (value) => {
@@ -168,36 +167,36 @@ function Home() {
       setTimeout(() => {
         setShowMsg4(true);
         setShowImg5(true);
-      }, 1200);
+      }, 600);
 
       setTimeout(() => {
         setStep2(true);
-      }, 2000);
+      }, 1200);
       setLoading4(true);
       setTimeout(() => {
         setTimeout(() => {
           setLoading4(false);
-        }, 400);
+        }, 700);
         setMsg1("Alright, let me ask you two quick questions.");
-      }, 1200);
+      }, 1400);
 
       setLoading5(true);
       setTimeout(() => {
         setTimeout(() => {
           setLoading5(false);
-        }, 400);
+        }, 700);
         setShowImg5(false);
         setShowMsg5(true);
         setShowImg6(true);
         setMsg2("Do you have more than $15,000 in debt? Press Yes or No.");
-      }, 2000);
+      }, 2100);
 
       // setBtn2(true)
       setTimeout(() => {
         setShowImg6(false);
         setShowImg7(true);
         setBtn2(true);
-      }, 3000);
+      }, 2800);
     }
   };
 
@@ -209,6 +208,9 @@ function Home() {
 
       console.log(btn2);
 
+      setShowImg8(true);
+      setShowMsg6(true);
+
       setTimeout(() => {
         setStep3(true);
       }, 400);
@@ -217,82 +219,85 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setLoading6(false);
-        }, 800);
-        setShowImg8(true);
-        setShowMsg6(true);
+        }, 700);
+        // setShowImg8(true);
+        // setShowMsg6(true);
         setMsg3("Would you like to Clear Your Debt?");
-      }, 1800);
+      }, 1400);
 
       setTimeout(() => {
         setShowImg8(false);
         setShowImg9(true);
         setBtn3(true);
-      }, 2800);
+      }, 2100);
     } else {
       // code here
+      setLoading6(true);
+      setShowImg8(true);
+      setShowMsg6(true);
+
       setshowUserReply2(true);
       setResponse2("No");
       setBtn2(false);
-      setInterval(() => {
+      setTimeout(() => {
         setStep3(true);
       }, 1200);
 
-      setLoading6(true);
       setTimeout(() => {
         setTimeout(() => {
           setLoading6(false);
-        }, 800);
-        setShowImg8(true);
-        setShowMsg6(true);
+        }, 700);
+
         setMsg3("Do you earn more than 50k?");
-      }, 2000);
+      }, 1400);
 
       setTimeout(() => {
         setShowImg8(false);
         setShowImg10(true);
         setBtn3(true);
-      }, 3000);
+      }, 2100);
     }
   };
 
   const reply3 = (value) => {
     setResponse3(value);
     setBtn3(false);
-    setShowMsgAca(true);
+    // setShowMsgAca(true);
     if (value === "Yes") {
       setshowUserReply3(true);
       setStep4(true);
       setResponse3("Yes");
 
+      setShowMsg7(true);
       setLoading7(true);
+      setShowImg11(true);
       setTimeout(() => {
         setTimeout(() => {
           setLoading7(false);
-        }, 400);
-        setShowImg11(true);
-        setShowMsg7(true);
+        }, 700);
+
         setMsg4("🎉 Congratulations! 🎁");
-      }, 1200);
+      }, 1400);
 
       setLoading8(true);
       setLoading9(true);
       setTimeout(() => {
         setTimeout(() => {
           setLoading8(false);
-        }, 400);
+        }, 700);
         setShowImg11(false);
         setShowImg12(true);
         setShowMsg8(true);
-
+        // setLoading9(false);
         setTimeout(() => {
           setLoading9(false);
-        }, 800);
+        }, 700);
         setMsg5(
           "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
         );
         // setMsg6("+18556900292");
         // setMsg6_1("(855) 690-0292");
-      }, 1500);
+      }, 2100);
       setTimeout(() => {
         setShowImg11(false);
         setShowImg12(false);
@@ -300,44 +305,49 @@ function Home() {
         setShowMsg9(true);
         setMsg6("+18556900292");
         setMsg6_1("(855) 690-0292");
-      }, 2300);
+      }, 2800);
+      setTimeout(() => {
+        setShowChatClosed(true);
+      }, 2800);
     } else {
       // code here
       setStep4(true);
       setshowUserReply3(true);
 
+      setShowImg11(true);
+      setShowMsg7(true);
       setLoading7(true);
       setTimeout(() => {
         setTimeout(() => {
           setLoading7(false);
-        }, 400);
-        setShowImg11(true);
-        setShowMsg7(true);
-        setMsg4("Are you in debt relief or ACA or Medicare");
-      }, 1200);
+        }, 700);
 
-      setLoading8(true);
-      setLoading9(true);
+        setMsg4("Are you in debt relief or ACA or Medicare");
+      }, 1400);
+
+      // setLoading8(true);
+      // setLoading9(true);
       setTimeout(() => {
         setTimeout(() => {
           setLoading8(false);
-        }, 400);
+        }, 700);
         setShowImg11(false);
         setShowImg12(true);
         setShowMsg8(true);
 
         setTimeout(() => {
           setLoading9(false);
-        }, 800);
+        }, 2100);
         setMsg5("");
-        // setMsg6("+18556900292");
-        // setMsg6_1("(855) 690-0292");
-      }, 1500);
+        setMsg6("+18556900292");
+        setMsg6_1("(855) 690-0292");
+      }, 2100);
 
       setTimeout(() => {
+        setShowMsgAca(true);
         setShowImg11(false);
-        setShowImg12(false);
-        setShowImg13(true);
+        setShowImg12(true);
+        setShowImg13(false);
         setShowMsg9(true);
         if (value === "Debt") {
           setMsg6("+18556900292");
@@ -352,7 +362,7 @@ function Home() {
           setMsg6("+18556900292");
           setMsg6_1("(855) 690-0292");
         }
-      }, 2300);
+      }, 2100);
     }
   };
 
@@ -382,10 +392,13 @@ function Home() {
   const [secondLoad, setSecondLoad] = useState(true);
   const [thirdLoad, setThirdLoad] = useState(true);
 
+  // var for showing chat closed
+  const [showChatClosed, setShowChatClosed] = useState(false);
+
   // vars for reply 4 loading
   const reply4 = (value) => {
     setShowMsgAca(false);
-
+    setShowImg12(false);
     if (value === "ACA") {
       setResponse20(value);
       // setFirstImg(true);
@@ -393,11 +406,11 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setFirstLoad(false);
-        }, 500);
+        }, 700);
         setHideFirst(true);
         setFirstImg(true);
         setMsg20_1("🎉 Congratulations! 🎁");
-      }, 1200);
+      }, 1400);
 
       // setFirstImg(false);
 
@@ -405,7 +418,7 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setSecondLoad(false);
-        }, 800);
+        }, 700);
         setHideSecond(true);
         setFirstImg(false);
         setSecondImg(true);
@@ -413,7 +426,7 @@ function Home() {
         setMsg20_2(
           "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
         );
-      }, 1800);
+      }, 2100);
 
       setFirstImg(false);
 
@@ -421,14 +434,17 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setThirdLoad(false);
-        }, 1200);
+        }, 700);
         setHideThird(true);
         setFirstImg(false);
         setSecondImg(false);
         setThirdImg(true);
         setAcaNumber("+18445590632");
-        setMsg20_3("+18445590632");
-      }, 2400);
+        setMsg20_3("(844) 559-0632");
+      }, 2800);
+      setTimeout(() => {
+        setShowChatClosed(true);
+      }, 3500);
     } else if (value === "Debt") {
       setResponse20(value);
       // setFirstImg(true);
@@ -436,11 +452,11 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setFirstLoad(false);
-        }, 500);
+        }, 700);
         setHideFirst(true);
         setFirstImg(true);
         setMsg20_1("🎉 Congratulations! 🎁");
-      }, 1200);
+      }, 1400);
 
       // setFirstImg(false);
 
@@ -448,7 +464,7 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setSecondLoad(false);
-        }, 800);
+        }, 700);
         setHideSecond(true);
         setFirstImg(false);
         setSecondImg(true);
@@ -456,7 +472,7 @@ function Home() {
         setMsg20_2(
           "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
         );
-      }, 1800);
+      }, 2100);
 
       setFirstImg(false);
 
@@ -464,14 +480,17 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setThirdLoad(false);
-        }, 1200);
+        }, 700);
         setHideThird(true);
         setFirstImg(false);
         setSecondImg(false);
         setThirdImg(true);
         setAcaNumber("+18556900292");
-        setMsg20_3("+18556900292");
-      }, 2400);
+        setMsg20_3("(855) 690-0292");
+      }, 2800);
+      setTimeout(() => {
+        setShowChatClosed(true);
+      }, 3500);
     } else {
       setResponse20(value);
       // setFirstImg(true);
@@ -479,11 +498,11 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setFirstLoad(false);
-        }, 500);
+        }, 700);
         setHideFirst(true);
         setFirstImg(true);
         setMsg20_1("🎉 Congratulations! 🎁");
-      }, 1200);
+      }, 1400);
 
       // setFirstImg(false);
 
@@ -491,15 +510,15 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setSecondLoad(false);
-        }, 800);
+        }, 700);
         setHideSecond(true);
         setFirstImg(false);
         setSecondImg(true);
 
         setMsg20_2(
-          "Call this numberTap the number button below to call now and eliminate your debt, it only takes 2 minutes."
+          "Tap the number button below to call now and eliminate your debt, it only takes 2 minutes."
         );
-      }, 1800);
+      }, 2100);
 
       setFirstImg(false);
 
@@ -507,14 +526,17 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setThirdLoad(false);
-        }, 1200);
+        }, 700);
         setHideThird(true);
         setFirstImg(false);
         setSecondImg(false);
         setThirdImg(true);
         setAcaNumber("+18885440239");
-        setMsg20_3("+18885440239");
-      }, 2400);
+        setMsg20_3("(888) 544-0239");
+      }, 2800);
+      setTimeout(() => {
+        setShowChatClosed(true);
+      }, 3500);
     }
 
     // setStep5(true);
@@ -1236,7 +1258,7 @@ function Home() {
                       <div> </div>
                     )}
                   </div>
-                  <p className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                  <div className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
                     {thirdLoad === true ? (
                       <div>
                         <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
@@ -1244,20 +1266,20 @@ function Home() {
                     ) : (
                       <a
                         href={`tel:${acaNumber}`}
-                        className="bg-blue-600 py-1 px-2 rounded text-white"
+                        className="bg-blue-600 py-1 px-2 rounded-full text-white"
                       >
                         {msg20_3}
                       </a>
                     )}
                     {/* {evelyn} */}
-                  </p>
+                  </div>
                 </div>
               )}
               {/* <p>{msg20_3}</p> */}
             </div>
           )}
 
-          {hideThird && (
+          {showChatClosed && (
             <div className="grid grid-cols-3 items-center justify-around mt-10 mb-24">
               <div className="h-[1px] w-full bg-gray-300 "></div>
               <span className="text-gray-400 text-[12px] text-center">
