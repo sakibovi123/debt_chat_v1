@@ -241,7 +241,7 @@ function Home() {
       setBtn2(false);
       setTimeout(() => {
         setStep3(true);
-      }, 1200);
+      }, 100);
 
       setTimeout(() => {
         setTimeout(() => {
@@ -399,16 +399,22 @@ function Home() {
   const reply4 = (value) => {
     setShowMsgAca(false);
     setShowImg12(false);
+
     if (value === "ACA") {
       setResponse20(value);
       // setFirstImg(true);
-      setFirstLoad(true);
+      setTimeout(() => {
+        setFirstImg(true);
+        console.log(firstImg);
+        setFirstLoad(true);
+        setHideFirst(true);
+      }, 50);
+
       setTimeout(() => {
         setTimeout(() => {
           setFirstLoad(false);
         }, 700);
-        setHideFirst(true);
-        setFirstImg(true);
+
         setMsg20_1("🎉 Congratulations! 🎁");
       }, 1400);
 
@@ -434,7 +440,7 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setThirdLoad(false);
-        }, 700);
+        }, 0);
         setHideThird(true);
         setFirstImg(false);
         setSecondImg(false);
@@ -444,17 +450,22 @@ function Home() {
       }, 2800);
       setTimeout(() => {
         setShowChatClosed(true);
-      }, 3500);
+      }, 2800);
     } else if (value === "Debt") {
       setResponse20(value);
       // setFirstImg(true);
-      setFirstLoad(true);
+      setTimeout(() => {
+        setFirstImg(true);
+        console.log(firstImg);
+        setFirstLoad(true);
+        setHideFirst(true);
+      }, 50);
+
       setTimeout(() => {
         setTimeout(() => {
           setFirstLoad(false);
         }, 700);
-        setHideFirst(true);
-        setFirstImg(true);
+
         setMsg20_1("🎉 Congratulations! 🎁");
       }, 1400);
 
@@ -480,7 +491,7 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setThirdLoad(false);
-        }, 700);
+        }, 0);
         setHideThird(true);
         setFirstImg(false);
         setSecondImg(false);
@@ -490,17 +501,22 @@ function Home() {
       }, 2800);
       setTimeout(() => {
         setShowChatClosed(true);
-      }, 3500);
+      }, 2800);
     } else {
       setResponse20(value);
       // setFirstImg(true);
-      setFirstLoad(true);
+      setTimeout(() => {
+        setFirstImg(true);
+        console.log(firstImg);
+        setFirstLoad(true);
+        setHideFirst(true);
+      }, 50);
+
       setTimeout(() => {
         setTimeout(() => {
           setFirstLoad(false);
         }, 700);
-        setHideFirst(true);
-        setFirstImg(true);
+
         setMsg20_1("🎉 Congratulations! 🎁");
       }, 1400);
 
@@ -526,7 +542,7 @@ function Home() {
       setTimeout(() => {
         setTimeout(() => {
           setThirdLoad(false);
-        }, 700);
+        }, 0);
         setHideThird(true);
         setFirstImg(false);
         setSecondImg(false);
@@ -536,7 +552,7 @@ function Home() {
       }, 2800);
       setTimeout(() => {
         setShowChatClosed(true);
-      }, 3500);
+      }, 2800);
     }
 
     // setStep5(true);
@@ -1258,7 +1274,7 @@ function Home() {
                       <div> </div>
                     )}
                   </div>
-                  <div className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] ">
+                  <div className="bg-gray-200 w-fit px-3 py-5 rounded-md max-w-[305px] ">
                     {thirdLoad === true ? (
                       <div>
                         <BsThreeDots className="text-4xl text-gray-400 duration-300 opacity-85" />
@@ -1266,7 +1282,7 @@ function Home() {
                     ) : (
                       <a
                         href={`tel:${acaNumber}`}
-                        className="bg-blue-600 py-1 px-2 rounded-full text-white"
+                        className="bg-blue-600 py-3 px-5 rounded-full text-white"
                       >
                         {msg20_3}
                       </a>
