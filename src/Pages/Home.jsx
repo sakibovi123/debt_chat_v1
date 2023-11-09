@@ -108,7 +108,7 @@ function Home() {
       setTimeout(() => {
         setLoading(false);
       }, 700);
-      setHello("Hello");
+      setHello("Hi There 👋");
     }, 1400);
 
     setLoading2(true);
@@ -117,7 +117,7 @@ function Home() {
         setLoading2(false);
       }, 700);
       setShowMsg2(true);
-      setEvelyn("I'm Evelyn from Debt Settlement.");
+      setEvelyn("I'm Evelyn. I'm going to help you to get your debt removed");
       setShowImg1(false);
       setShowImg2(true);
     }, 2100);
@@ -128,7 +128,9 @@ function Home() {
         setLoading3(false);
       }, 700);
       setShowMsg3(true);
-      setQualify("Do you have more than $10,000 debt?");
+      setQualify(
+        "In order to help you I need to know if you have more than $10,000 in debt?"
+      );
       setShowImg1(false);
       setShowImg2(false);
       setShowImg3(true);
@@ -199,7 +201,7 @@ function Home() {
         setTimeout(() => {
           setLoading4(false);
         }, 700);
-        setMsg1("Alright, let me ask you a quick question.");
+        setMsg1("Okay, let me ask you two more quick questions.");
       }, 1400);
 
       setLoading5(true);
@@ -314,7 +316,9 @@ function Home() {
           setLoading6(false);
         }, 700);
 
-        setMsg3("Thank you for your time. Please click this link");
+        setMsg3(
+          "Unfortunately I cannot help you based on the given answers. I will close this chat and when you give us feedback about this chat, you can get $500 Walmart gift card."
+        );
       }, 1400);
 
       setTimeout(() => {
@@ -837,7 +841,7 @@ function Home() {
                         target="_blank"
                         className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
                       >
-                        Google
+                        Get $500 Gift Card
                       </a>
                     </div>
                   </div>
