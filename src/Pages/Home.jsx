@@ -9,7 +9,8 @@ import { useLocation, useParams } from "react-router-dom";
 function Home() {
   const location = useLocation()
 
-
+  const [ clickId, setClickId ] = useState("")
+  const [ affId, setAffid ] = useState("")
 
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
@@ -436,12 +437,15 @@ function Home() {
   useEffect(() => {
     step1();
 
-    const params = new URLSearchParams(location.search)
+    const params = new URLSearchParams(window.location.search)
+    console.log(params.toString())
+    const click__Id = params.get("clickid")
+    const aff__Id = params.get("affiliate_id")
 
-    const clickId = params.get("clickid")
-
-    console.log(clickId)
-
+    setClickId(click__Id)
+    setAffid(aff__Id)
+    console.log(click__Id)
+    console.log(aff__Id)
 
   }, []);
   return (
@@ -837,7 +841,7 @@ function Home() {
                     </div>
                     <div className="bg-gray-200 w-fit px-3 py-2 rounded-md max-w-[305px] flex gap-2">
                       <a
-                        href="https://www.google.com/"
+                        href={`https://debtreliefhelpdesk.com/chat/en/v2/?sub1=${affId}&sub2=${clickId}`}
                         target="_blank"
                         className="cursor-pointer bg-blue-600 text-white px-10 py-3 font-bold rounded-full mr-2"
                       >
