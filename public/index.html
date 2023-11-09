@@ -12,6 +12,103 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Debt Elimination</title>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = (window._paq = window._paq || []);
+      / tracker methods like "setCustomDimension" should be called before "trackPageView" /;
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+      (function () {
+        var u = "//insight.datahubb.io/";
+        _paq.push(["setTrackerUrl", u + "matomo.php"]);
+        _paq.push(["setSiteId", "2"]);
+        var d = document,
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0];
+        g.async = true;
+        g.src = u + "matomo.js";
+        s.parentNode.insertBefore(g, s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+
+    <!-- Insight Code-->
+    <meta
+      http-equiv="delegate-ch"
+      content="sec-ch-ua https://tracking.datahubb.io; sec-ch-ua-mobile https://tracking.datahubb.io; sec-ch-ua-arch https://tracking.datahubb.io; sec-ch-ua-model https://tracking.datahubb.io; sec-ch-ua-platform https://tracking.datahubb.io; sec-ch-ua-platform-version https://tracking.datahubb.io; sec-ch-ua-bitness https://tracking.datahubb.io; sec-ch-ua-full-version-list https://tracking.datahubb.io; sec-ch-ua-full-version https://tracking.datahubb.io"
+    />
+    <style>
+      .dtpcnt {
+        opacity: 0;
+      }
+    </style>
+    <script>
+      (function (c, a, f, q, b, m, r, g, h, k, d, n, e, p) {
+        p = "https:" === c.location.protocol ? "secure; " : "";
+        c[b] ||
+          ((c[b] = function (a) {
+            c[b].state.callbackQueue.push(a);
+          }),
+          (c[b].state = { callbackQueue: [] }),
+          (c[b].registerConversion = function (a) {
+            c[b].state.callbackQueue.push(a);
+          }),
+          (function () {
+            (k = /[?&]cpid(=([^&#]*)|&|#|$)/.exec(c.location.href)) &&
+              k[2] &&
+              ((d = k[2]),
+              (n = a.cookie.match(new RegExp("(^| )vl-" + d + "=([^;]+)"))));
+            var b = a.cookie.match(/(^| )vl-cid=([^;]+)/),
+              l;
+            "savedCid" !== r ||
+              !b ||
+              (d && "undefined" !== typeof d) ||
+              (l = b.pop());
+            g = a.createElement("script");
+            h = a.scripts[0];
+            g.src =
+              m +
+              (-1 === m.indexOf("?") ? "?" : "&") +
+              "oref=" +
+              f(a.referrer) +
+              "&ourl=" +
+              f(location[q]) +
+              "&opt=" +
+              f(a.title) +
+              "&vtm=" +
+              new Date().getTime() +
+              (l ? "&cid=" + l : "") +
+              (n ? "&uw=no" : "");
+            h.parentNode.insertBefore(g, h);
+            d &&
+              ((e = new Date()),
+              e.setTime(e.getTime() + 864e5),
+              (a.cookie =
+                "vl-" +
+                d +
+                "=1; " +
+                p +
+                "samesite=Strict; expires=" +
+                e.toGMTString() +
+                "; path=/"));
+          })());
+      })(
+        window,
+        document,
+        encodeURIComponent,
+        "href",
+        "dtpCallback",
+        "https://tracking.datahubb.io/d/.js",
+        "savedCid"
+      );
+    </script>
+    <noscript
+      ><link
+        href="https://tracking.datahubb.io/d/.js?noscript=true&ourl="
+        rel="stylesheet"
+    /></noscript>
+    <!-- End Insight Code -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
